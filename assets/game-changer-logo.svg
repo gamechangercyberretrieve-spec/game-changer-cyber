@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 150" role="img" aria-labelledby="t d">
+<title id="t">Game Changer Cyber Intelligent Solution</title>
+<desc id="d">Blue and gold shield with a connected letter G, followed by the company name.</desc>
+<defs>
+ <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ffe17a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+ <linearGradient id="blue" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#0759d6"/></linearGradient>
+</defs>
+<g transform="translate(12 8)">
+ <path d="M70 5 125 25v42c0 35-23 57-55 72C38 124 15 102 15 67V25Z" fill="#071b3a" stroke="url(#blue)" stroke-width="8"/>
+ <path d="M70 17 113 32v34c0 27-16 44-43 57-27-13-43-30-43-57V32Z" fill="none" stroke="url(#gold)" stroke-width="4"/>
+ <path d="M91 42a31 31 0 1 0 7 36H72V63h45v12c-3 24-23 41-48 41a43 43 0 1 1 39-61Z" fill="url(#blue)"/>
+ <path d="M94 24 130 9l-17 31-4-12-15 7Z" fill="url(#gold)"/>
+ <circle cx="70" cy="76" r="6" fill="#fff"/>
+</g>
+<text x="160" y="62" font-family="Arial,Helvetica,sans-serif" font-size="40" font-weight="800" fill="#f8fbff" letter-spacing="1">GAME CHANGER</text>
+<text x="161" y="98" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" fill="#fbbf24" letter-spacing=".7">CYBER INTELLIGENT SOLUTION</text>
+<text x="162" y="125" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#a9c9ed" letter-spacing="2">INNOVATE • SECURE • TRANSFORM</text>
+</svg>
