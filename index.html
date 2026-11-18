@@ -27,8 +27,8 @@
     .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:12px;min-width:240px}
     .brand-logo{display:block;width:218px;height:76px;object-fit:contain;flex:0 0 auto}
-.foot-logo{display:block;width:250px;height:82px;object-fit:contain;flex:0 0 auto}
-.foot-brand-wrap{display:flex;align-items:center;gap:12px}
+    .foot-logo{display:block;width:250px;height:82px;object-fit:contain;flex:0 0 auto}
+    .foot-brand-wrap{display:flex;align-items:center;gap:12px}
     .brand-name{font-size:15px;line-height:1.15;font-weight:900;letter-spacing:.045em}
     .brand-name span{display:block;color:var(--blue);font-size:12px;letter-spacing:.19em;margin-top:5px}
     nav{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#d2deea}
@@ -100,6 +100,16 @@
     .contact-item strong{font-size:14px;color:#e8eff6;overflow-wrap:anywhere}
     .contact-item a:hover{color:var(--gold);text-decoration:underline}
     .notice{font-size:12px;color:#91a4b6;margin-top:15px}
+    .enquiry-form{display:grid;gap:16px;padding:25px;background:#0b1928;border:1px solid var(--line);border-radius:7px}
+    .enquiry-form label{display:block;color:#e8eff6;font-size:13px;font-weight:700;margin-bottom:6px}
+    .enquiry-form input,.enquiry-form textarea{width:100%;padding:13px;background:#07111f;color:white;border:1px solid #34516a;border-radius:5px;font:inherit}
+    .enquiry-form input:focus,.enquiry-form textarea:focus{outline:2px solid var(--blue);border-color:var(--blue)}
+    .enquiry-form textarea{min-height:135px;resize:vertical}
+    .enquiry-form button{cursor:pointer;font:inherit}
+    .enquiry-form button:disabled{opacity:.6;cursor:wait}
+    #form-status{min-height:24px;font-size:13px;overflow-wrap:anywhere}
+    #form-status.success{color:var(--green)}
+    #form-status.error{color:#ff9292}
     footer{border-top:1px solid var(--line);padding:28px 0;color:#91a4b6;font-size:12px}
     .foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .foot-brand{font-weight:900;color:#eaf2f8;letter-spacing:.05em}
@@ -272,7 +282,7 @@
           <h2>Tell us what happened. We’ll help you understand the next steps.</h2>
           <p>Share a brief, non-sensitive description of your concern. We will review your enquiry and explain whether our services may be appropriate.</p>
         </div>
-        <a class="btn" href="mailto:support@gamechangersolution.top?subject=Confidential%20enquiry">Contact our team ↗</a>
+        <a class="btn" href="#contact">Contact our team ↗</a>
       </div>
     </section>
 
@@ -281,15 +291,40 @@
         <div>
           <div class="kicker">Contact Game Changer Cyber Retrieve</div>
           <h2>Let’s discuss a safe way forward.</h2>
-          <p>For enquiries about cryptocurrency fraud, digital evidence, compromised accounts, impersonation scams or recovery guidance, contact us by email. Please provide only a general description at first; we can explain what information may be appropriate to share later.</p>
-          <a class="btn" href="mailto:support@gamechangersolution.top?subject=Enquiry%20to%20Game%20Changer%20Cyber%20Retrieve">Email us ↗</a>
-        </div>
-        <div class="contact-list">
-          <div class="contact-item"><small>Business support email</small><strong><a href="mailto:support@gamechangersolution.top">support@gamechangersolution.top</a></strong></div>
-          <div class="contact-item"><small>Displayed location</small><strong>New York City, USA</strong></div>
-          <div class="contact-item"><small>Service coverage</small><strong>Serving customers worldwide</strong></div>
+          <p>For enquiries about cryptocurrency fraud, digital evidence, compromised accounts, impersonation scams or recovery guidance, complete the enquiry form. Please provide only a general, non-sensitive description at first.</p>
+
+          <div class="contact-list">
+            <div class="contact-item"><small>Business support email</small><strong><a href="mailto:support@gamechangersolution.top">support@gamechangersolution.top</a></strong></div>
+            <div class="contact-item"><small>Displayed location</small><strong>New York City, USA</strong></div>
+            <div class="contact-item"><small>Service coverage</small><strong>Serving customers worldwide</strong></div>
+          </div>
+
           <p class="notice">New York City is displayed as a general location only. This website does not represent that the company maintains a physical office there.</p>
-          <p class="notice">Never email passwords, one-time verification codes, private keys, wallet seed phrases or remote-access credentials. No recovery outcome is guaranteed. Any access to a device, account or system requires the owner's explicit authorization.</p>
+          <p class="notice">Never submit passwords, one-time verification codes, private keys, wallet seed phrases or remote-access credentials. No recovery outcome is guaranteed. Any access to a device, account or system requires the owner's explicit authorization.</p>
+        </div>
+
+        <div>
+          <form id="enquiry-form" class="enquiry-form">
+            <div>
+              <label for="full_name">Full name *</label>
+              <input type="text" id="full_name" name="full_name" maxlength="120" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" maxlength="200" required>
+            </div>
+            <div>
+              <label for="message">Your message *</label>
+              <textarea id="message" name="message" maxlength="5000" required></textarea>
+            </div>
+            <button class="btn" type="submit" id="submit-button">Submit enquiry ↗</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+            <p class="notice">Your enquiry will be submitted to our enquiry database. Please do not include confidential authentication or financial credentials.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -306,17 +341,104 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile navigation
     const menuButton = document.querySelector('.menu');
     const nav = document.getElementById('site-nav');
+
     menuButton.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       menuButton.setAttribute('aria-expanded', String(isOpen));
     });
+
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         menuButton.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    // Supabase connection settings.
+    // Replace BOTH placeholders with the values from the correct Supabase project.
+    // Use the Project URL and the public anon/publishable key only.
+    // NEVER put a service_role or secret key in this HTML file.
+    const SUPABASE_URL = 'YOUR_SUPABASE_PROJECT_URL';
+    const SUPABASE_PUBLIC_KEY = 'YOUR_SUPABASE_PUBLIC_ANON_OR_PUBLISHABLE_KEY';
+
+    const enquiryForm = document.getElementById('enquiry-form');
+    const submitButton = document.getElementById('submit-button');
+    const formStatus = document.getElementById('form-status');
+
+    enquiryForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!enquiryForm.reportValidity()) return;
+
+      if (
+        SUPABASE_URL === 'YOUR_SUPABASE_PROJECT_URL' ||
+        SUPABASE_PUBLIC_KEY === 'YOUR_SUPABASE_PUBLIC_ANON_OR_PUBLISHABLE_KEY'
+      ) {
+        formStatus.textContent =
+          'The enquiry form is not connected yet. Please contact us by email.';
+        formStatus.className = 'error';
+        return;
+      }
+
+      const formData = new FormData(enquiryForm);
+      const enquiry = {
+        full_name: String(formData.get('full_name') || '').trim(),
+        email: String(formData.get('email') || '').trim(),
+        subject: String(formData.get('subject') || '').trim(),
+        message: String(formData.get('message') || '').trim(),
+        status: 'new'
+      };
+
+      if (!enquiry.full_name || !enquiry.email || !enquiry.subject || !enquiry.message) {
+        formStatus.textContent = 'Please complete all required fields.';
+        formStatus.className = 'error';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+      formStatus.textContent = 'Sending your enquiry...';
+      formStatus.className = '';
+
+      try {
+        const baseUrl = SUPABASE_URL.replace(/\/+$/, '');
+
+        const response = await fetch(`${baseUrl}/rest/v1/website_enquiries`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_PUBLIC_KEY,
+            'Authorization': `Bearer ${SUPABASE_PUBLIC_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(enquiry)
+        });
+
+        if (!response.ok) {
+          const errorBody = await response.text();
+          console.error('Supabase enquiry submission failed:', response.status, errorBody);
+          throw new Error(`Submission failed (${response.status}).`);
+        }
+
+        enquiryForm.reset();
+        formStatus.textContent =
+          'Thank you. Your enquiry has been submitted successfully.';
+        formStatus.className = 'success';
+
+      } catch (error) {
+        console.error('Enquiry submission error:', error);
+        formStatus.textContent =
+          'We could not submit your enquiry. Please try again later or email support@gamechangersolution.top.';
+        formStatus.className = 'error';
+
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit enquiry ↗';
+      }
     });
   </script>
 </body>
