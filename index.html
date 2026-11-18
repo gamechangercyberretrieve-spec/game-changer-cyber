@@ -26,7 +26,9 @@
     header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
     .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .brand-logo{display:block;width:64px;height:64px;object-fit:contain;flex:0 0 auto}\n    .foot-logo{display:block;width:48px;height:48px;object-fit:contain;flex:0 0 auto}\n    .foot-brand-wrap{display:flex;align-items:center;gap:12px}
+    .brand-logo{display:block;width:218px;height:76px;object-fit:contain;flex:0 0 auto}
+.foot-logo{display:block;width:250px;height:82px;object-fit:contain;flex:0 0 auto}
+.foot-brand-wrap{display:flex;align-items:center;gap:12px}
     .brand-name{font-size:15px;line-height:1.15;font-weight:900;letter-spacing:.045em}
     .brand-name span{display:block;color:var(--blue);font-size:12px;letter-spacing:.19em;margin-top:5px}
     nav{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:700;color:#d2deea}
@@ -111,7 +113,7 @@
     }
     @media(max-width:560px){
       .wrap{width:calc(100% - 30px)}.topline .wrap{font-size:9px;flex-direction:column;gap:2px}
-      .brand{min-width:0}.brand-logo{width:52px;height:52px}.brand-name{font-size:13px}.brand-name span{font-size:10px}
+      .brand{min-width:0}.brand-logo{width:158px;height:58px}.brand-name{font-size:13px}.brand-name span{font-size:10px}
       .hero-grid{gap:35px}h1{font-size:43px}.hero-media{padding-left:12px}
       .hero-media img{height:260px}.trustbar .wrap{grid-template-columns:1fr}
       .trustbar div{border-left:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px}
@@ -134,8 +136,7 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="Game Changer Cyber Retrieve home">
-        <img class="brand-logo" src="assets/game-changer-logo.svg" alt="Game Changer Cyber Retrieve official logo">
-        <span class="brand-name">GAME CHANGER<span>CYBER RETRIEVE</span></span>
+        <img class="brand-logo" src="assets/game-changer-logo.png" alt="Game Changer Cyber Retrieve official logo">
       </a>
       <button class="menu" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">MENU ☰</button>
       <nav id="site-nav" aria-label="Main navigation">
@@ -296,7 +297,7 @@
 
   <footer>
     <div class="wrap foot">
-      <div class="foot-brand-wrap"><img class="foot-logo" src="assets/game-changer-logo.svg" alt="Game Changer Cyber Retrieve official logo"><div class="foot-brand">GAME CHANGER <span>CYBER RETRIEVE</span></div></div>
+      <div class="foot-brand-wrap"><img class="foot-logo" src="assets/game-changer-logo.png" alt="Game Changer Cyber Retrieve official logo"></div>
       <span>New York City, USA · Serving customers worldwide · <a href="mailto:support@gamechangersolution.top">support@gamechangersolution.top</a></span>
       <span>© <span id="year"></span> Game Changer Cyber Retrieve. All rights reserved.</span>
       <a href="#home">Back to top ↑</a>
