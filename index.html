@@ -154,7 +154,7 @@
         <a href="#about">About us</a>
         <a href="#services">Our services</a>
         <a href="#approach">Our approach</a>
-        <a class="nav-cta" href="#contact">Contact us ↗</a>
+        <a class="nav-cta" href="#contact">Submit Case ↗</a>
       </nav>
     </div>
   </header>
@@ -289,7 +289,7 @@
     <section class="section" id="contact">
       <div class="wrap contact-grid">
         <div>
-          <div class="kicker">Contact Game Changer Cyber Retrieve</div>
+          <div class="kicker">Submit a case to Game Changer Cyber Retrieve</div>
           <h2>Let’s discuss a safe way forward.</h2>
           <p>For enquiries about cryptocurrency fraud, digital evidence, compromised accounts, impersonation scams or recovery guidance, complete the enquiry form. Please provide only a general, non-sensitive description at first.</p>
 
@@ -321,9 +321,9 @@
               <label for="message">Your message *</label>
               <textarea id="message" name="message" maxlength="5000" required></textarea>
             </div>
-            <button class="btn" type="submit" id="submit-button">Submit enquiry ↗</button>
+            <button class="btn" type="submit" id="submit-button">Submit Case ↗</button>
             <p id="form-status" role="status" aria-live="polite"></p>
-            <p class="notice">Your enquiry will be submitted to our enquiry database. Please do not include confidential authentication or financial credentials.</p>
+            <p class="notice">Your case will be submitted to our enquiry database. Please do not include confidential authentication or financial credentials.</p>
           </form>
         </div>
       </div>
@@ -379,7 +379,7 @@
         SUPABASE_PUBLIC_KEY === 'YOUR_SUPABASE_PUBLIC_ANON_OR_PUBLISHABLE_KEY'
       ) {
         formStatus.textContent =
-          'The enquiry form is not connected yet. Please contact us by email.';
+          'The case submission form is not connected yet. Please contact us by email.';
         formStatus.className = 'error';
         return;
       }
@@ -410,11 +410,10 @@
         const response = await fetch(`${baseUrl}/rest/v1/website_enquiries`, {
           method: 'POST',
           headers: {
-            headers: {
-  'Content-Type': 'application/json',
-  'apikey': SUPABASE_PUBLIC_KEY,
-  'Prefer': 'return=minimal'
-},
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_PUBLIC_KEY,
+            'Prefer': 'return=minimal'
+          },
           body: JSON.stringify(enquiry)
         });
 
@@ -426,7 +425,7 @@
 
         enquiryForm.reset();
         formStatus.textContent =
-          'Thank you. Your enquiry has been submitted successfully.';
+          'Your case has been submitted successfully.';
         formStatus.className = 'success';
 
       } catch (error) {
@@ -437,7 +436,7 @@
 
       } finally {
         submitButton.disabled = false;
-        submitButton.textContent = 'Submit enquiry ↗';
+        submitButton.textContent = 'Submit Case ↗';
       }
     });
   </script>
