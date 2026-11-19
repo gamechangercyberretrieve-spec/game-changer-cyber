@@ -410,10 +410,11 @@
         const response = await fetch(`${baseUrl}/rest/v1/website_enquiries`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'apikey': SUPABASE_PUBLIC_KEY,
-            'Prefer': 'return=minimal'
-          },
+            headers: {
+  'Content-Type': 'application/json',
+  'apikey': SUPABASE_PUBLIC_KEY,
+  'Prefer': 'return=minimal'
+},
           body: JSON.stringify(enquiry)
         });
 
